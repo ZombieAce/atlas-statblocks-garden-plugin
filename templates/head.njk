@@ -1,0 +1,5 @@
+{#- Loads the statblock renderer only on notes that hold an atlas-statblock fence. -#}
+{% if content and ("atlas-statblock-mount" in content) %}
+<link rel="stylesheet" href="/plugins/atlas-statblocks/styles/atlas-statblocks.css">
+<script src="/plugins/atlas-statblocks/assets/atlas-statblocks.js" defer></script>
+{% endif %}

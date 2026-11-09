@@ -1,0 +1,12 @@
+{
+  "id": "atlas-statblocks",
+  "name": "Atlas Statblocks",
+  "version": "1.0.0",
+  "description": "Draws Atlas VTT statblocks on your garden exactly as Obsidian shows them, read-only. Maps, scenes and dice stay in Obsidian.",
+  "author": "Based on Atlas VTT by Fabian Urbanek",
+  "hooks": "index.js",
+  "slots": {
+    "notes.head": "templates/head.njk"
+  },
+  "assets": ["assets/", "styles/"]
+}

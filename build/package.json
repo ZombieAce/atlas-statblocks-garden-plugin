@@ -1,0 +1,7 @@
+{
+  "name": "atlas-statblocks-garden-build",
+  "private": true,
+  "description": "Build tooling for the garden-plugin-atlas-statblocks bundle. Not needed to use the plugin.",
+  "license": "AGPL-3.0-only",
+  "scripts": { "build": "node build.mjs" }
+}

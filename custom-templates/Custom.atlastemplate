@@ -1,0 +1,529 @@
+{
+  "format": "atlas-statblock-template",
+  "version": 1,
+  "id": "custom-j76sqt",
+  "importedFrom": {
+    "layoutId": "cadb8bf86a38",
+    "layoutName": "Custom",
+    "extras": {
+      "cssProperties": {
+        "primaryColor": "#38718a",
+        "ruleColor": "#38718a",
+        "backgroundColor": "#ddfdfb",
+        "borderColor": "#dedede",
+        "contentFontSize": "16px"
+      }
+    }
+  },
+  "fields": [
+    {
+      "key": "name",
+      "label": "Name",
+      "type": "text"
+    },
+    {
+      "key": "size",
+      "label": "Size",
+      "type": "text"
+    },
+    {
+      "key": "type",
+      "label": "Type",
+      "type": "text"
+    },
+    {
+      "key": "subtype",
+      "label": "Subtype",
+      "type": "text"
+    },
+    {
+      "key": "alignment",
+      "label": "Alignment",
+      "type": "text"
+    },
+    {
+      "key": "image",
+      "label": "Image",
+      "type": "image"
+    },
+    {
+      "key": "ac",
+      "label": "Armor Class",
+      "type": "text"
+    },
+    {
+      "key": "hp",
+      "label": "Hit Points",
+      "type": "text"
+    },
+    {
+      "key": "speed",
+      "label": "Speed",
+      "type": "text"
+    },
+    {
+      "key": "hit_dice",
+      "label": "Hit dice",
+      "type": "dice"
+    },
+    {
+      "key": "ac_class",
+      "label": "Ac class",
+      "type": "text"
+    },
+    {
+      "key": "stats",
+      "label": "Abilities",
+      "type": "scores",
+      "slots": [
+        "Str",
+        "Dex",
+        "Con",
+        "Int",
+        "Wis",
+        "Cha"
+      ]
+    },
+    {
+      "key": "saves",
+      "label": "Saves",
+      "type": "pairs"
+    },
+    {
+      "key": "skillsaves",
+      "label": "Skills",
+      "type": "pairs"
+    },
+    {
+      "key": "damage_immunities",
+      "label": "Damage Immunities",
+      "type": "text"
+    },
+    {
+      "key": "damage_resistances",
+      "label": "Damage Resistances",
+      "type": "text"
+    },
+    {
+      "key": "damage_vulnerabilities",
+      "label": "Damage Vulnerabilities",
+      "type": "text"
+    },
+    {
+      "key": "condition_immunities",
+      "label": "Condition Immunities",
+      "type": "text"
+    },
+    {
+      "key": "cr",
+      "label": "Level",
+      "type": "text"
+    },
+    {
+      "key": "languages",
+      "label": "Languages",
+      "type": "text"
+    },
+    {
+      "key": "senses",
+      "label": "Senses",
+      "type": "text"
+    },
+    {
+      "key": "level",
+      "label": "Proficiency Bonus",
+      "type": "text"
+    },
+    {
+      "key": "equipment",
+      "label": "Equipment",
+      "type": "entries"
+    },
+    {
+      "key": "traits",
+      "label": "Passives",
+      "type": "entries"
+    },
+    {
+      "key": "spells",
+      "label": "Spells",
+      "type": "entries"
+    },
+    {
+      "key": "actions",
+      "label": "Actions",
+      "type": "entries"
+    },
+    {
+      "key": "bonus_actions",
+      "label": "Bonus Actions",
+      "type": "entries"
+    },
+    {
+      "key": "legendary_description",
+      "label": "Legendary description",
+      "type": "markdown"
+    },
+    {
+      "key": "legendary_actions",
+      "label": "Legendary actions",
+      "type": "entries"
+    },
+    {
+      "key": "reactions",
+      "label": "Reactions",
+      "type": "entries"
+    },
+    {
+      "key": "description",
+      "label": "Description",
+      "type": "markdown",
+      "meaning": "description"
+    },
+    {
+      "key": "xp",
+      "label": "XP",
+      "type": "text"
+    }
+  ],
+  "header": {
+    "hidden": [
+      "level",
+      "type",
+      "description"
+    ]
+  },
+  "layout": {
+    "maxColumns": 2,
+    "blocks": [
+      {
+        "id": "fs000001",
+        "type": "section",
+        "whenEmpty": "fold",
+        "blocks": [
+          {
+            "id": "fs000005",
+            "type": "line",
+            "fields": [
+              "size",
+              "type",
+              "subtype",
+              "alignment"
+            ],
+            "separator": " | ",
+            "whenEmpty": "fold",
+            "fallback": "-"
+          }
+        ]
+      },
+      {
+        "id": "fs000006",
+        "type": "divider"
+      },
+      {
+        "id": "fs000007",
+        "type": "section",
+        "whenEmpty": "fold",
+        "blocks": [
+          {
+            "id": "fs000009",
+            "type": "stat",
+            "field": "ac",
+            "look": "run-in",
+            "pattern": "{ac}[ ({ac_class})]",
+            "showWhen": {
+              "field": "ac",
+              "is": "present"
+            },
+            "whenEmpty": "fold"
+          }
+        ]
+      },
+      {
+        "id": "fs00000a",
+        "type": "divider"
+      },
+      {
+        "id": "fs00000b",
+        "type": "scores",
+        "field": "stats",
+        "orientation": "row",
+        "columns": [
+          {
+            "formula": "floor((value - 10) / 2)",
+            "display": "signed"
+          }
+        ],
+        "whenEmpty": "fold",
+        "fsExtras": {
+          "dice": false,
+          "diceProperty": "stats"
+        }
+      },
+      {
+        "id": "fs00000c",
+        "type": "divider",
+        "showWhen": {
+          "field": "stats",
+          "is": "present"
+        }
+      },
+      {
+        "id": "fs00000d",
+        "type": "section",
+        "whenEmpty": "fold",
+        "blocks": [
+          {
+            "id": "fs00000e",
+            "type": "pairs",
+            "field": "saves",
+            "display": "signed",
+            "whenEmpty": "fold",
+            "fsExtras": {
+              "dice": true,
+              "diceProperty": "saves"
+            }
+          },
+          {
+            "id": "fs00000f",
+            "type": "pairs",
+            "field": "skillsaves",
+            "display": "signed",
+            "whenEmpty": "fold"
+          },
+          {
+            "id": "fs00000g",
+            "type": "stat",
+            "field": "damage_vulnerabilities",
+            "label": "Damage Vulnerabilities:",
+            "look": "run-in",
+            "whenEmpty": "fold"
+          },
+          {
+            "id": "fs00000h",
+            "type": "stat",
+            "field": "damage_resistances",
+            "label": "Damage Resistances:",
+            "look": "run-in",
+            "whenEmpty": "fold"
+          },
+          {
+            "id": "fs00000i",
+            "type": "stat",
+            "field": "damage_immunities",
+            "label": "Damage Immunities:",
+            "look": "run-in",
+            "whenEmpty": "fold"
+          },
+          {
+            "id": "fs00000j",
+            "type": "stat",
+            "field": "condition_immunities",
+            "label": "Condition Immunities:",
+            "look": "run-in",
+            "whenEmpty": "fold"
+          },
+          {
+            "id": "fs00000k",
+            "type": "stat",
+            "field": "languages",
+            "label": "Languages:",
+            "look": "run-in",
+            "whenEmpty": "fold",
+            "fallback": "-"
+          },
+          {
+            "id": "fjfn1iok",
+            "type": "stat",
+            "field": "xp",
+            "look": "run-in"
+          },
+          {
+            "id": "fs00000l",
+            "type": "row",
+            "align": "spread",
+            "whenEmpty": "fold",
+            "blocks": [
+              {
+                "id": "fs00000m",
+                "type": "stat",
+                "field": "cr",
+                "look": "run-in",
+                "pattern": "{cr|lookup:level}",
+                "whenEmpty": "fallback",
+                "fallback": "-"
+              },
+              {
+                "id": "fs00000n",
+                "type": "stat",
+                "field": "level",
+                "look": "run-in",
+                "pattern": "{cr|lookup:proficiency_bonus}",
+                "whenEmpty": "fallback",
+                "fallback": "-"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fs00000o",
+        "type": "entries",
+        "field": "equipment",
+        "heading": "Equipment",
+        "fallback": "-"
+      },
+      {
+        "id": "fs00000p",
+        "type": "entries",
+        "field": "traits",
+        "heading": "Passives",
+        "whenEmpty": "fold",
+        "fsExtras": {
+          "dice": false
+        }
+      },
+      {
+        "id": "fs00000q",
+        "type": "entries",
+        "field": "spells",
+        "heading": "Spells",
+        "whenEmpty": "fold",
+        "fallback": "-"
+      },
+      {
+        "id": "fs00000r",
+        "type": "entries",
+        "field": "actions",
+        "heading": "Actions",
+        "whenEmpty": "fold",
+        "fsExtras": {
+          "dice": true
+        }
+      },
+      {
+        "id": "fs00000s",
+        "type": "entries",
+        "field": "bonus_actions",
+        "heading": "Bonus Actions",
+        "whenEmpty": "fold",
+        "fsExtras": {
+          "dice": true
+        }
+      },
+      {
+        "id": "fs00000t",
+        "type": "section",
+        "heading": "Legendary Actions",
+        "whenEmpty": "fold",
+        "blocks": [
+          {
+            "id": "fs00000u",
+            "type": "text",
+            "field": "legendary_description",
+            "whenEmpty": "fold"
+          },
+          {
+            "id": "fs00000v",
+            "type": "entries",
+            "field": "legendary_actions",
+            "whenEmpty": "fold",
+            "fsExtras": {
+              "dice": true
+            }
+          }
+        ]
+      },
+      {
+        "id": "fs00000w",
+        "type": "entries",
+        "field": "reactions",
+        "heading": "Reactions",
+        "whenEmpty": "fold",
+        "fsExtras": {
+          "dice": true
+        }
+      }
+    ]
+  },
+  "lookups": {
+    "level": {
+      "0": "0 (10 XP)",
+      "1": "1 (200 XP)",
+      "2": "2 (450 XP)",
+      "3": "3 (700 XP)",
+      "4": "4 (1,100 XP)",
+      "5": "5 (1,800 XP)",
+      "6": "6 (2,300 XP)",
+      "7": "7 (2,900 XP)",
+      "8": "8 (3,900 XP)",
+      "9": "9 (5,000 XP)",
+      "10": "10 (5,900 XP)",
+      "11": "11 (7,200 XP)",
+      "12": "12 (8,400 XP)",
+      "13": "13 (10,000 XP)",
+      "14": "14 (11,500 XP)",
+      "15": "15 (13,000 XP)",
+      "16": "16 (15,000 XP)",
+      "17": "17 (18,000 XP)",
+      "18": "18 (20,000 XP)",
+      "19": "19 (22,000 XP)",
+      "20": "20 (25,000 XP)",
+      "21": "21 (33,000 XP)",
+      "22": "22 (41,000 XP)",
+      "23": "23 (50,000 XP)",
+      "24": "24 (62,000 XP)",
+      "25": "25 (75,000 XP)",
+      "26": "26 (90,000 XP)",
+      "27": "27 (105,000 XP)",
+      "28": "28 (120,000 XP)",
+      "29": "29 (135,000 XP)",
+      "30": "30 (155,000 XP)",
+      "1/8": "1/8 (25 XP)",
+      "1/4": "1/4 (50 XP)",
+      "1/2": "1/2 (100 XP)",
+      "0.125": "1/8 (25 XP)",
+      "0.25": "1/4 (50 XP)",
+      "0.5": "1/2 (100 XP)"
+    },
+    "proficiency_bonus": {
+      "0": "+2",
+      "1": "+2",
+      "2": "+2",
+      "3": "+2",
+      "4": "+2",
+      "5": "+3",
+      "6": "+3",
+      "7": "+3",
+      "8": "+3",
+      "9": "+4",
+      "10": "+4",
+      "11": "+4",
+      "12": "+4",
+      "13": "+5",
+      "14": "+5",
+      "15": "+5",
+      "16": "+5",
+      "17": "+6",
+      "18": "+6",
+      "19": "+6",
+      "20": "+6",
+      "21": "+7",
+      "22": "+7",
+      "23": "+7",
+      "24": "+7",
+      "25": "+8",
+      "26": "+8",
+      "27": "+8",
+      "28": "+8",
+      "29": "+9",
+      "30": "+9",
+      "1/8": "+2",
+      "1/4": "+2",
+      "1/2": "+2",
+      "0.125": "+2",
+      "0.25": "+2",
+      "0.5": "+2"
+    }
+  }
+}
