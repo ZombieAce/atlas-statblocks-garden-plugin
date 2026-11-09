@@ -86,12 +86,12 @@ node build/build.mjs                              # fetches Atlas at the pinned 
 ATLAS_SRC=/path/to/atlas-vtt node build/build.mjs  # or use a checkout you have
 ```
 
-Requires Node 20+ and git. The output is reproducible. To follow a newer Atlas, change
+Requires Node 22+ (Atlas's requirement) and git. The output is reproducible. To follow a newer Atlas, change
 `build/ATLAS_COMMIT`, rebuild, and look at a few statblocks before releasing.
 
 ## Tested
 
-Built against Atlas VTT 0.13.1 and the Digital Garden template 3.x (Eleventy 3.1), on a site holding
+Built against Atlas VTT 0.13.1 and the Digital Garden template as of 2026-10-26 (`oleeskild/digitalgarden`, Eleventy 3.1), on a site holding
 notes in the shape Digital Garden's publisher writes, in Chromium (desktop and phone width, light
 and dark themes): the 5E 2014 and 2024 templates, a custom template from a file and from a note,
 images, links, spells, and the fallbacks. Not yet tried in Firefox or Safari, and not run through
