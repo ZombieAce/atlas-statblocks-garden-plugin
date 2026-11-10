@@ -1,33 +1,20 @@
-/*
- * Atlas Statblocks for Digital Garden: fit-ups, prepended to Atlas VTT's own
- * statblock stylesheet. The card draws with Obsidian's CSS variables, which the
- * garden's stylesheet already defines, so it follows the site's theme (light,
- * dark, community theme) without further mapping.
- */
-
 .atlas-statblock-mount {
   margin: 1.25em 0;
 }
 
-/*
- * Obsidian's reading-view rule `.markdown-rendered td, th { min-width: var(--table-column-min-width) }`
- * is copied into the garden's stylesheet and reaches every table in a note. An
- * ability-score group (the 5E 2024 table draws three side by side) must be
- * free to shrink to its content, or the groups overrun a narrow column.
- */
+.atlas-sb-sheet .atlas-sb-columns > .atlas-sb-item { break-inside: auto; }
+
 .atlas-garden-statblock .atlas-sb-score-group :is(th, td) {
   min-width: 0;
   max-width: none;
 }
 
-/* A fence on a note that holds no statblock. */
 .atlas-garden-statblock-message {
   margin: 0;
   color: var(--text-muted);
   font-style: italic;
 }
 
-/* Dice notation is plain text on a published statblock: rolling happens at the table. */
 .atlas-garden-statblock .atlas-dice-formula {
   cursor: inherit;
 }
